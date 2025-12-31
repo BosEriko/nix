@@ -22,8 +22,6 @@
 
   home.packages = with pkgs; [
         vscode        # Visual Studio Code (https://github.com/BosEriko/vs)
-        distrobox
-        podman
   ];
 
   programs.home-manager.enable = true;
