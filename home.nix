@@ -5,6 +5,7 @@
   home.username = "deck";
   home.homeDirectory = "/home/deck";
 
+
   programs.bash = {
     enable = true;
     initExtra = ''
@@ -20,7 +21,9 @@
   home.stateVersion = "25.11"; # don't change this even if you upgrade your channel in the future, this should stay the same as the version you first installed nix on
 
   home.packages = with pkgs; [
-    vscode        # Visual Studio Code (https://github.com/BosEriko/vs)
+        vscode        # Visual Studio Code (https://github.com/BosEriko/vs)
+        distrobox
+        podman
   ];
 
   programs.home-manager.enable = true;
