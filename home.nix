@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 {
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "deck";
   home.homeDirectory = "/home/deck";
 
