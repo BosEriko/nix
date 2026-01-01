@@ -44,4 +44,7 @@ To remove unwanted packages make sure to run garbage collection every now and th
 ```sh
 nix-collect-garbage
 ```
-You can also [create a shortcut](create-shortcut.md) to an application installed using `nix` on SteamOS!
+You can also add the packages you installed via `nix` to the list of Applications on SteamOS. Simply run the command below each time you install a new package with `nix`:
+```sh
+bash <(curl -s https://raw.githubusercontent.com/BosEriko/nix/main/setup-nix-apps.sh)
+```
