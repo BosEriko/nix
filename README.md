@@ -44,3 +44,4 @@ To remove unwanted packages make sure to run garbage collection every now and th
 ```sh
 nix-collect-garbage
 ```
+You can also [create a shortcut](create-shortcut.md) to an application installed using `nix` on SteamOS!
