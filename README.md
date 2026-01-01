@@ -46,5 +46,5 @@ nix-collect-garbage
 ```
 You can also add the packages you installed via `nix` to the list of Applications on SteamOS. Simply run the command below each time you install a new package with `nix`:
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/BosEriko/nix/main/setup-nix-apps.sh)
+sh <(curl -s https://raw.githubusercontent.com/BosEriko/nix/main/setup-nix-apps.sh)
 ```
