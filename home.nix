@@ -1,4 +1,9 @@
 { config, pkgs, ... }:
+
+let
+  lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
+in
+
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -27,13 +32,9 @@
   programs.home-manager.enable = true;
 
   # Automatically clone LazyVim if it's not already installed
-  home.activation.lazyvim = {
-    text = ''
-      if [ ! -d "$HOME/.config/nvim" ]; then
-        echo "Installing LazyVim..."
-        git clone https://github.com/LazyVim/starter "$HOME/.config/nvim"
-      fi
-    '';
-    deps = [ pkgs.git ];
-  };
+  home.activation.lazyvim = lib.mkIf !(builtins.pathExists lazyvimDir) ''
+    echo "Installing LazyVim..."
+    mkdir -p $HOME/.config/nvim
+    git clone https://github.com/LazyVim/starter $HOME/.config/nvim
+  '';
 }
