@@ -27,7 +27,6 @@ in
 
   home.packages = with pkgs; [
     neovim
-    alacritty
   ];
 
   programs.home-manager.enable = true;
