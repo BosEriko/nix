@@ -21,14 +21,19 @@
   home.stateVersion = "25.11"; # don't change this even if you upgrade your channel in the future, this should stay the same as the version you first installed nix on
 
   home.packages = with pkgs; [
-        neovim           # Main Editor
-
-        # NeoVim Dependencies
-        gcc              # C compiler
-        make             # Required by Tree-sitter
-        pkg-config       # Sometimes needed for building parsers
-        clang            # Optional alternative compiler
+        neovim
   ];
 
   programs.home-manager.enable = true;
+
+  # Automatically clone LazyVim if it's not already installed
+  home.activation.lazyvim = {
+    text = ''
+      if [ ! -d "$HOME/.config/nvim" ]; then
+        echo "Installing LazyVim..."
+        git clone https://github.com/LazyVim/starter "$HOME/.config/nvim"
+      fi
+    '';
+    deps = [ pkgs.git ];
+  };
 }
