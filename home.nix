@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 
-let
-  lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
-in
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -23,19 +20,33 @@ in
     '';
   };
 
-  home.stateVersion = "25.11"; # don't change this even if you upgrade your channel in the future
+  # Don't change this even if you upgrade your channel in the future
+  # It should mirror the version of 'nixpkgs' and 'home-manager' when you do 'nix-channel --list'
+  home.stateVersion = "25.11"; 
 
   home.packages = with pkgs; [
-    neovim
+    neovim       # NeoVim Text Editor
+    sway         # Sway: Window Manager
+    swaybg       # Sway: Background Tool
+    waybar       # Sway: Status bar
+    foot         # Sway: Terminal
   ];
 
   programs.home-manager.enable = true;
 
-  # Automatically clone LazyVim if it's not already installed
-  home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists lazyvimDir ) ''
-    export PATH=${pkgs.git}/bin:$PATH
-    echo "Installing LazyVim..."
-    mkdir -p $HOME/.config/nvim
-    git clone https://github.com/LazyVim/starter $HOME/.config/nvim
+  # NeoVim Configuration
+  programs.neovim = {
+    enable = true;
+    home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists "${config.home.homeDirectory}/.config/nvim" ) ''
+      export PATH=${pkgs.git}/bin:$PATH
+      mkdir -p $HOME/.config/nvim
+      git clone https://github.com/LazyVim/starter $HOME/.config/nvim
+    '';
+  };
+
+  # nixGL Installation (Sway Dependency)
+  home.activation.nixgl = ''
+    ! nix-channel --list | grep -q "nixgl" && nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl && nix-channel --update
+    nix-env -q nixGL || nix-env -iA nixgl
   '';
 }
