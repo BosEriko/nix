@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+# NeoVim Directory
 let
   lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
 in
