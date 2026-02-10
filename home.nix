@@ -42,7 +42,6 @@ in
   # NeoVim Configuration
   home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists lazyvimDir ) ''
     export PATH=${pkgs.git}/bin:$PATH
-    echo "Installing LazyVim..."
     mkdir -p $HOME/.config/nvim
     git clone https://github.com/LazyVim/starter $HOME/.config/nvim
   '';
