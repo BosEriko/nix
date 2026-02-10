@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 
+let
+  lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
+in
+
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -35,14 +39,12 @@
   programs.home-manager.enable = true;
 
   # NeoVim Configuration
-  programs.neovim = {
-    enable = true;
-    home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists "${config.home.homeDirectory}/.config/nvim" ) ''
-      export PATH=${pkgs.git}/bin:$PATH
-      mkdir -p $HOME/.config/nvim
-      git clone https://github.com/LazyVim/starter $HOME/.config/nvim
-    '';
-  };
+  home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists lazyvimDir ) ''
+    export PATH=${pkgs.git}/bin:$PATH
+    echo "Installing LazyVim..."
+    mkdir -p $HOME/.config/nvim
+    git clone https://github.com/LazyVim/starter $HOME/.config/nvim
+  '';
 
   # nixGL Installation (Sway Dependency)
   home.activation.nixgl = ''
