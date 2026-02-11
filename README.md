@@ -44,3 +44,7 @@ To remove unwanted packages make sure to run garbage collection every now and th
 ```sh
 nix-collect-garbage
 ```
+To reset your home-manager to a state from this repository you can run this command.
+```sh
+curl -sL https://raw.githubusercontent.com/BosEriko/nix/refs/heads/master/reset.sh | bash
+```
