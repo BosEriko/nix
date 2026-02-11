@@ -35,6 +35,7 @@ in
     swaybg       # Sway: Background Tool
     waybar       # Sway: Status bar
     foot         # Sway: Terminal
+    brave        # Brave: Browser
   ];
 
   programs.home-manager.enable = true;
