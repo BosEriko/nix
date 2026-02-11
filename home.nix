@@ -36,6 +36,7 @@ in
     waybar       # Sway: Status bar
     foot         # Sway: Terminal
     brave        # Brave: Browser
+    kmodmap      # kmodmap: Hotkey Editor
   ];
 
   programs.home-manager.enable = true;
