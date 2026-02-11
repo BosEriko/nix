@@ -36,6 +36,7 @@ in
     waybar       # Sway: Status bar
     foot         # Sway: Terminal
     vivaldi      # Vivaldi: Browser
+    ffmpeg       # Vivaldi: For media codecs
   ];
 
   programs.home-manager.enable = true;
