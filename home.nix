@@ -50,7 +50,6 @@ in
   # nixGL Installation (Sway Dependency)
   home.activation.nixgl = ''
     if ! nix-channel --list | grep -q "nixgl"; then
-      echo "Adding nixgl channel..."
       nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
       nix-channel --update
       nix-env -iA nixgl
