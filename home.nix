@@ -30,11 +30,12 @@ in
   home.stateVersion = "25.11"; 
 
   home.packages = with pkgs; [
-    neovim       # NeoVim Text Editor
+    neovim       # NeoVim: Text Editor
     sway         # Sway: Window Manager
     swaybg       # Sway: Background Tool
     waybar       # Sway: Status bar
     foot         # Sway: Terminal
+    vivaldi      # Vivaldi: Browser
   ];
 
   programs.home-manager.enable = true;
