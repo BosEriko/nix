@@ -31,12 +31,13 @@ in
 
   home.packages = with pkgs; [
     neovim       # NeoVim: Text Editor
+    vscodium     # VSCodium: Text Editor
     sway         # Sway: Window Manager
     swaybg       # Sway: Background Tool
     waybar       # Sway: Status bar
     foot         # Sway: Terminal
     brave        # Brave: Browser
-    kmodmap      # kmodmap: Hotkey Editor
+    kmonad       # kmonad: Hotkey Editor
   ];
 
   programs.home-manager.enable = true;
