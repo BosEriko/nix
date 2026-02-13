@@ -11,20 +11,6 @@ in
   home.username = "deck";
   home.homeDirectory = "/home/deck";
 
-  programs.bash = {
-    enable = true;
-    initExtra = ''
-      if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-        . $HOME/.nix-profile/etc/profile.d/nix.sh
-      fi
-
-      export NIX_SHELL_PRESERVE_PROMPT=1
-      if [[ -n "$IN_NIX_SHELL" ]]; then
-        export PS1="$PS1(nix-shell) "
-      fi
-    '';
-  };
-
   home.stateVersion = lib.strings.trim version;
 
   home.packages = with pkgs; [
