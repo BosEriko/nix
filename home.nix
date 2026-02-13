@@ -30,7 +30,6 @@ in
   home.packages = with pkgs; [
     kmonad       # Keybinds: kmonad (https://github.com/BosEriko/kmonad)
     sway         # Window Manager: Sway (https://github.com/BosEriko/sway)
-    swaybg       # Window Manager: Sway Background (https://github.com/BosEriko/sway)
     waybar       # Window Manager: Status bar (https://github.com/BosEriko/sway)
     brave        # Browser: Brave (https://github.com/BosEriko/brave)
     foot         # Terminal: Foot (https://github.com/BosEriko/foot)
