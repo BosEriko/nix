@@ -7,17 +7,12 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon               # Install 
 source .bash_profile                                                  # Source the current bash session
 git clone https://github.com/BosEriko/nix.git ~/.config/home-manager  # Clone the repository
 ~/.config/home-manager/setup.sh                                       # Setup channels
+mv .bash_profile .bash_profile.bckp && mv .bashrc .bashrc.bckp        # Backup your Bash configurations
+nix-shell '<home-manager>' -A install                                 # Install Home Manager
 ```
-Backup your Bash configurations.
-```sh
-mv .bash_profile .bash_profile.bckp
-mv .bashrc .bashrc.bckp
-```
-Install Home Manager
-```sh
-nix-shell '<home-manager>' -A install
-```
-Then create a configuration file on `~/.config/home-manager/home.nix` and add the contents of [home.nix](home.nix) inside it. After every update of the file make sure to run switch.
+
+## Nix Commands
+After every update of the file make sure to run switch.
 ```sh
 home-manager switch
 ```
