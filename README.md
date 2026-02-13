@@ -1,19 +1,10 @@
 # Nix (Package Manager)
-Download [Nix](https://nixos.org/download/) as your package manager. Before we start, set the password first if still not available.
+Download [Nix](https://nixos.org/download/) as your package manager. Run the commands below on the Terminal.
 ``` sh
-passwd
-```
-Adjust the permission of the `nix` directory.
-```sh
-sudo chown -R deck /nix
-```
-Install Nix package manager.
-```sh
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
-```
-Source the current bash session.
-```sh
-source .bash_profile
+passwd                                                     # Set your password
+sudo chown -R deck /nix                                    # Set the permissions of the /nix directory
+sh <(curl -L https://nixos.org/nix/install) --no-daemon    # Install Nix package manager
+source .bash_profile                                       # Source the current bash session
 ```
 Switch to the stable channel of packages. Update the version to the latest stable if possible. Check the [Nix](https://nixos.org/) website for information.
 ```sh
