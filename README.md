@@ -12,7 +12,7 @@ nix-shell '<home-manager>' -A install                                 # Install 
 ```
 
 ## Nix Commands
-After every update of the file make sure to run switch.
+After every update of `~/.config/home-manager/home.nix` make sure to run switch.
 ```sh
 home-manager switch
 ```
@@ -20,7 +20,7 @@ To remove unwanted packages make sure to run garbage collection every now and th
 ```sh
 nix-collect-garbage
 ```
-To reset your home-manager to a state from this repository you can run this command.
+To reset your home-manager to a state from this remote repository you can run this command.
 ```sh
 curl -sL https://raw.githubusercontent.com/BosEriko/nix/refs/heads/master/reset.sh | bash
 ```
