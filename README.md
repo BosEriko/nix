@@ -8,7 +8,6 @@ source .bash_profile                                                  # Source t
 git clone https://github.com/BosEriko/nix.git ~/.config/home-manager  # Clone the repository
 ~/.config/home-manager/setup.sh                                       # Setup channels
 mv .bash_profile .bash_profile.bckp && mv .bashrc .bashrc.bckp        # Backup your Bash configurations
-nix-shell '<home-manager>' -A install                                 # Install Home Manager
 ```
 
 ## Nix Commands
