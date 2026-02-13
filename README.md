@@ -5,7 +5,7 @@ passwd                                                                # Set your
 sudo chown -R deck /nix                                               # Set the permissions of the /nix directory
 sh <(curl -L https://nixos.org/nix/install) --no-daemon               # Install Nix package manager
 git clone https://github.com/BosEriko/nix.git ~/.config/home-manager  # Clone the repository
-~/.config/home-manager/setup.sh                                       # Setup channels
+~/.config/home-manager/setup.sh                                       # Setup Nix
 mv .bash_profile .bash_profile.bckp && mv .bashrc .bashrc.bckp        # Backup your Bash configurations
 source .bash_profile                                                  # Source the current bash session
 ```
