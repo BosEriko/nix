@@ -1,5 +1,10 @@
 { config, pkgs, lib, ... }:
 
+# Nix Dynamic Version
+let
+  version = builtins.readFile ./.nix-version;
+in
+
 # NeoVim Directory
 let
   lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
@@ -25,9 +30,7 @@ in
     '';
   };
 
-  # Don't change this even if you upgrade your channel in the future
-  # It should mirror the version of 'nixpkgs' and 'home-manager' when you do 'nix-channel --list'
-  home.stateVersion = "25.11"; 
+  home.stateVersion = lib.strings.trim version;
 
   home.packages = with pkgs; [
     neovim       # NeoVim: Text Editor
