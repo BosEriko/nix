@@ -5,11 +5,6 @@ let
   version = builtins.readFile ./.nix-version;
 in
 
-# NeoVim Directory
-let
-  lazyvimDir = "${config.home.homeDirectory}/.config/nvim";
-in
-
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -33,31 +28,15 @@ in
   home.stateVersion = lib.strings.trim version;
 
   home.packages = with pkgs; [
-    neovim       # NeoVim: Text Editor
-    vscodium     # VSCodium: Text Editor
-    sway         # Sway: Window Manager
-    swaybg       # Sway: Background Tool
-    waybar       # Sway: Status bar
-    foot         # Sway: Terminal
-    brave        # Brave: Browser
-    kmonad       # kmonad: Hotkey Editor
+    kmonad       # Keybinds: kmonad (https://github.com/BosEriko/kmonad)
+    sway         # Window Manager: Sway (https://github.com/BosEriko/sway)
+    swaybg       # Window Manager: Sway Background (https://github.com/BosEriko/sway)
+    waybar       # Window Manager: Status bar (https://github.com/BosEriko/sway)
+    brave        # Browser: Brave (https://github.com/BosEriko/brave)
+    foot         # Terminal: Foot (https://github.com/BosEriko/foot)
+    vscodium     # Editor: VSCodium (https://github.com/BosEriko/codium)
+    neovim       # Editor: NeoVim - VSCodium Dependency (https://github.com/BosEriko/codium)
   ];
 
   programs.home-manager.enable = true;
-
-  # NeoVim Configuration
-  home.activation.lazyvim = lib.mkIf ( ! builtins.pathExists lazyvimDir ) ''
-    export PATH=${pkgs.git}/bin:$PATH
-    mkdir -p $HOME/.config/nvim
-    git clone https://github.com/LazyVim/starter $HOME/.config/nvim
-  '';
-
-  # nixGL Installation (Sway Dependency)
-  home.activation.nixgl = ''
-    if ! nix-channel --list | grep -q "nixgl"; then
-      nix-channel --add https://github.com/guibou/nixGL/archive/main.tar.gz nixgl
-      nix-channel --update
-      nix-env -iA nixgl
-    fi
-  '';
 }
