@@ -1,22 +1,12 @@
 # Nix (Package Manager)
 Download [Nix](https://nixos.org/download/) as your package manager. Run the commands below on the Terminal.
 ``` sh
-passwd                                                     # Set your password
-sudo chown -R deck /nix                                    # Set the permissions of the /nix directory
-sh <(curl -L https://nixos.org/nix/install) --no-daemon    # Install Nix package manager
-source .bash_profile                                       # Source the current bash session
-```
-Switch to the stable channel of packages. Update the version to the latest stable if possible. Check the [Nix](https://nixos.org/) website for information.
-```sh
-nix-channel --add https://nixos.org/channels/nixos-25.11 nixpkgs
-```
-Add the Home Manager channel to your Nix configuration. Make sure the version on the command below mirrors the version on the command above.
-```sh
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
-```
-Update your channels.
-```sh
-nix-channel --update
+passwd                                                                # Set your password
+sudo chown -R deck /nix                                               # Set the permissions of the /nix directory
+sh <(curl -L https://nixos.org/nix/install) --no-daemon               # Install Nix package manager
+source .bash_profile                                                  # Source the current bash session
+git clone https://github.com/BosEriko/nix.git ~/.config/home-manager  # Clone the repository
+~/.config/home-manager/setup.sh                                       # Setup channels
 ```
 Backup your Bash configurations.
 ```sh
