@@ -18,8 +18,8 @@ in
     sway         # Window Manager: Sway (https://github.com/BosEriko/sway)
     waybar       # Window Manager: Status bar (https://github.com/BosEriko/sway)
     brave        # Browser: Brave (https://github.com/BosEriko/brave)
-    foot         # Terminal: Foot (https://github.com/BosEriko/foot)
-    neovim       # Editor: NeoVim - VSCodium Dependency (https://github.com/BosEriko/codium)
+    foot         # Shell: Foot (https://github.com/BosEriko/foot)
+    neovim       # Editor: NeoVim (https://github.com/BosEriko/codium)
 
     # Dependencies
     tmux         # Used in ~/.files/modules/tmux/install.z.sh

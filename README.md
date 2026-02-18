@@ -6,7 +6,6 @@ sudo chown -R deck /nix                                               # Set the 
 sh <(curl -L https://nixos.org/nix/install) --no-daemon               # Install Nix
 git clone https://github.com/BosEriko/nix.git ~/.config/home-manager  # Clone the repository
 ~/.config/home-manager/setup.sh                                       # Setup Nix
-source .bash_profile                                                  # Source bash
 ```
 
 ## Nix Commands
