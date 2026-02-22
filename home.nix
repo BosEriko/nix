@@ -28,6 +28,7 @@ in
     discord      # Used in ~/.config/sway
     lolcat       # Used in ~/.files/modules/git/config.z.sh
     figlet       # Used in ~/.files/modules/git/config.z.sh
+    antigen      # Used in ~/.files/modules/oh-my-zsh/config.z.sh
   ];
 
   programs.home-manager.enable = true;
