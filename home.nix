@@ -25,7 +25,8 @@ in
 
     # Dependencies
     tmux         # Used in ~/.files/modules/tmux/install.z.sh
-    discord      # Used in ~/.config/sway
+    discord      # Used in ~/.config/sway/config
+    spotify      # Used in ~/.config/sway/config
     lolcat       # Used in ~/.files/modules/git/config.z.sh
     figlet       # Used in ~/.files/modules/git/config.z.sh
     antigen      # Used in ~/.files/modules/oh-my-zsh/config.z.sh
