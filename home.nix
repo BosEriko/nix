@@ -16,9 +16,6 @@ in
   home.packages = with pkgs; [
     brave                     # Browser: Brave (https://github.com/BosEriko/brave)
     foot                      # Shell: Foot (https://github.com/BosEriko/foot)
-
-    # Dependencies
-    tmux         # Used in ~/.files/modules/tmux/install.z.sh
   ];
 
   programs.home-manager.enable = true;
