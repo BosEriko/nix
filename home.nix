@@ -14,9 +14,6 @@ in
   home.stateVersion = lib.strings.trim version;
 
   home.packages = with pkgs; [
-    swayfx                    # Window Manager: SwayFX (https://github.com/BosEriko/sway)
-    waybar                    # Window Manager: Status bar (https://github.com/BosEriko/sway)
-    nerd-fonts.jetbrains-mono # Window Manager: Mono Font (https://github.com/BosEriko/sway)
     brave                     # Browser: Brave (https://github.com/BosEriko/brave)
     foot                      # Shell: Foot (https://github.com/BosEriko/foot)
     neovim                    # Editor: NeoVim (https://github.com/BosEriko/codium)
