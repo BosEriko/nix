@@ -12,6 +12,9 @@ nix-channel --remove nixpkgs 2>/dev/null || true
 nix-channel --add https://nixos.org/channels/nixos-$VERSION nixpkgs
 nix-channel --update
 
+# Allow Free Applications
+export NIXPKGS_ALLOW_UNFREE=1
+
 # Install Applications
 NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixpkgs.discord # Used in https://github.com/BosEriko/sway
 NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixpkgs.spotify # Used in https://github.com/BosEriko/sway
