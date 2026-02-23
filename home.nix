@@ -16,7 +16,6 @@ in
   home.packages = with pkgs; [
     brave                     # Browser: Brave (https://github.com/BosEriko/brave)
     foot                      # Shell: Foot (https://github.com/BosEriko/foot)
-    neovim                    # Editor: NeoVim (https://github.com/BosEriko/codium)
 
     # Dependencies
     tmux         # Used in ~/.files/modules/tmux/install.z.sh
