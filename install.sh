@@ -8,7 +8,7 @@ nix-channel --remove nixpkgs 2>/dev/null || true
 nix-channel --add https://nixos.org/channels/nixos-25.11 nixpkgs
 nix-channel --update
 
-# Allow Free Applications
+# Allow Paid Applications
 export NIXPKGS_ALLOW_UNFREE=1
 
 # Install Applications
