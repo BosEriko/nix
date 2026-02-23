@@ -16,7 +16,7 @@ nix-channel --update
 export NIXPKGS_ALLOW_UNFREE=1
 
 # Install Applications
-NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixpkgs.discord # Used in https://github.com/BosEriko/sway
-NIXPKGS_ALLOW_UNFREE=1 nix-env -iA nixpkgs.spotify # Used in https://github.com/BosEriko/sway
+nix-env -iA nixpkgs.discord # Used in https://github.com/BosEriko/sway
+nix-env -iA nixpkgs.spotify # Used in https://github.com/BosEriko/sway
 
 echo "Done ✅"
