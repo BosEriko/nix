@@ -20,8 +20,6 @@ in
 
     # Dependencies
     tmux         # Used in ~/.files/modules/tmux/install.z.sh
-    discord      # Used in ~/.config/sway/config
-    spotify      # Used in ~/.config/sway/config
   ];
 
   programs.home-manager.enable = true;
