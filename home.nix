@@ -14,8 +14,6 @@ in
   home.stateVersion = lib.strings.trim version;
 
   home.packages = with pkgs; [
-    kmonad                    # Keybinds: kmonad (https://github.com/BosEriko/kmonad)
-    rofi                      # Keybinds: rofi (https://github.com/BosEriko/kmonad)
     swayfx                    # Window Manager: SwayFX (https://github.com/BosEriko/sway)
     waybar                    # Window Manager: Status bar (https://github.com/BosEriko/sway)
     nerd-fonts.jetbrains-mono # Window Manager: Mono Font (https://github.com/BosEriko/sway)
