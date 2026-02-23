@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-VERSION=$(cat .nix-version)
-
-echo "Setting up Nix channels for version $VERSION"
-
 # Remove Old Channel
 nix-channel --remove nixpkgs 2>/dev/null || true
 
 # Add New Channel
-nix-channel --add https://nixos.org/channels/nixos-$VERSION nixpkgs
+nix-channel --add https://nixos.org/channels/nixos-25.11 nixpkgs
 nix-channel --update
 
 # Allow Free Applications
